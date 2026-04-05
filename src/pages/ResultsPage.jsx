@@ -54,7 +54,7 @@ export default function ResultsPage() {
         >
           <div className="text-7xl mb-4">{isWinner ? '🏆' : '💀'}</div>
           <h1 className="text-5xl font-display font-extrabold text-blast-text neon-text mb-2">
-            {isWinner ? 'You Won!' : 'Game Over'}
+            {isWinner ? 'Ikaw ang Champion!' : 'Game Over'}
           </h1>
           {winner && (
             <p className="text-blast-muted text-xl">
@@ -109,7 +109,7 @@ export default function ResultsPage() {
         {/* Actions */}
         <div className="space-y-3">
           <button onClick={handlePlayAgain} className="btn-primary w-full text-lg py-4">
-            🎮 Play Again
+             Play Again
           </button>
           <button onClick={() => navigate('/')} className="btn-secondary w-full">
             ← Back to Home

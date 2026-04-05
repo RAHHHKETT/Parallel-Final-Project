@@ -78,7 +78,7 @@ export default function GamePage() {
     if (!isValidWord(word, game.currentPrompt)) {
       setShake(true)
       setFlash('bad')
-      setMessage('❌ Word must contain "' + game.currentPrompt + '"')
+      setMessage(' Word must contain "' + game.currentPrompt + '"')
       setTimeout(() => { setShake(false); setFlash(null); setMessage('') }, 1500)
       return
     }
@@ -89,13 +89,13 @@ export default function GamePage() {
         setFlash('good')
         if (result.bonusLife) {
           setFlash('bonus')
-          setMessage('🎉 All letters used! +1 Life!')
+          setMessage(' All letters used! +1 Life!')
           setTimeout(() => { setFlash(null); setMessage('') }, 2000)
         }
       } else {
         setShake(true)
         setFlash('bad')
-        setMessage('❌ ' + (result.reason === 'invalid' ? 'Invalid word' : 'Error'))
+        setMessage(' ' + (result.reason === 'invalid' ? 'Invalid word' : 'Error'))
         setTimeout(() => { setShake(false); setFlash(null); setMessage('') }, 1500)
       }
     } catch (err) {
@@ -125,7 +125,7 @@ export default function GamePage() {
       {/* Top bar */}
       <div className="flex items-center justify-between px-6 py-4 border-b border-blast-border bg-blast-surface/50 backdrop-blur-sm">
         <div className="font-display font-bold text-blast-text text-lg">
-          💣 <span className="neon-text">WordBlast</span>
+          💣 <span className="neon-text">OGABOGABO</span>
         </div>
         <div className="font-mono text-blast-muted text-sm">
           Room: <span className="text-blast-text tracking-widest">{code}</span>
@@ -271,7 +271,7 @@ export default function GamePage() {
                 <p className="text-blast-text text-xs font-display font-bold mt-1 truncate">{p.name}</p>
                 <div className="flex justify-center gap-0.5 mt-1">
                   {Array.from({ length: Math.max(p.lives ?? 0, 0) }, (_, i) => (
-                    <span key={i} className="text-[10px]">❤️</span>
+                    <span key={i} className="text-[10px]"></span>
                   ))}
                 </div>
               </div>

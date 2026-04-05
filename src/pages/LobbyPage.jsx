@@ -56,7 +56,7 @@ export default function LobbyPage() {
         <div className="text-center mb-8 animate-slide-up">
           <div className="text-5xl mb-3">💣</div>
           <h1 className="text-4xl font-display font-extrabold text-blast-text neon-text">
-            WordBlast
+            OGABOGABO
           </h1>
           <p className="text-blast-muted mt-1">Waiting for players…</p>
         </div>
@@ -70,7 +70,7 @@ export default function LobbyPage() {
           >
             {code}
           </button>
-          <p className="text-blast-muted text-sm mt-2">{copied ? '✅ Copied!' : 'Click to copy · Share with friends'}</p>
+          <p className="text-blast-muted text-sm mt-2">{copied ? ' Copied!' : 'Click to copy · Share with friends'}</p>
         </div>
 
         {/* Settings summary */}
@@ -82,7 +82,7 @@ export default function LobbyPage() {
               <p className="text-blast-muted text-xs">Difficulty</p>
             </div>
             <div>
-              <p className="text-blast-text font-display font-bold">{settings.startingLives} ❤️</p>
+              <p className="text-blast-text font-display font-bold">{settings.startingLives} </p>
               <p className="text-blast-muted text-xs">Starting Lives</p>
             </div>
             <div>
@@ -124,7 +124,7 @@ export default function LobbyPage() {
 
           {players.length < 2 && (
             <p className="text-blast-muted text-center text-sm mt-4">
-              ⏳ Need at least 2 players to start
+               Need at least 2 players to start
             </p>
           )}
         </div>
