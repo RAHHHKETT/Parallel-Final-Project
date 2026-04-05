@@ -101,19 +101,19 @@ export default function HomePage() {
             <div>
               <label className="block text-blast-muted text-sm mb-2 font-display font-semibold uppercase tracking-wider">Difficulty</label>
               <div className="grid grid-cols-3 gap-2">
-                {['easy', 'medium', 'hard'].map(d => (
+                {['easy', 'hard'].map(d => (
                   <button
                     key={d}
                     onClick={() => setSettings(s => ({ ...s, difficulty: d }))}
                     className={`py-2 rounded-lg text-sm font-display font-semibold capitalize transition-all duration-200
                       ${settings.difficulty === d
                         ? d === 'easy' ? 'bg-green-500/20 border border-green-500/60 text-green-400'
-                          : d === 'medium' ? 'bg-blast-accent/20 border border-blast-accent/60 text-blast-glow'
+                          : d === '' ? 'bg-blast-accent/20 border border-blast-accent/60 text-blast-glow'
                           : 'bg-blast-hot/20 border border-blast-hot/60 text-blast-hot'
                         : 'bg-blast-surface border border-blast-border text-blast-muted hover:border-blast-accent'
                       }`}
                   >
-                    {d === 'hans easy' ? '' : d === 'seth = medium' ? 'Oga = very hard' : ''} {d}
+                    {d === 'easy' ? '' : d === 'hard' ? '  ' : ''} {d}
                   </button>
                 ))}
               </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
               disabled={loading}
               className="btn-primary w-full"
             >
-              {loading ? 'Joining…' : '🚪 Join Room'}
+              {loading ? 'Joining…' : ' Join Room'}
             </button>
           </div>
         )}

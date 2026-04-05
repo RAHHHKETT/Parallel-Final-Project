@@ -11,33 +11,60 @@ import {
 // Beginner: common 2-letter combos  |  Medium: 3-letter  |  Hard: rarer combos
 const PROMPTS = {
   easy: [
-    'at','be','do','go','he','in','it','me','my','no','of','on','or','so','to',
-    'up','us','we','an','by','if','is','oh','as','am','en','er','al','le','re',
-    'ab','ac','ad','ag','ai','aj','ak','am','ap','aq','ar','au','av','aw','ax',
-    'ay','az','ba','bi','bo','bu','ca','ce','ci','co','cu','cy','da','de','di',
-  ],
-  medium: [
-    'ack','age','aid','aim','air','all','amp','and','ant','any','arc','are',
-    'ark','arm','art','ash','ask','ate','ear','eat','eel','egg','ego','elf',
-    'elm','end','era','eve','eye','fat','few','fig','fit','fly','fog','for',
-    'fox','fun','fur','gel','gem','get','god','got','gun','gut','gym','had',
-    'ham','has','hat','hay','her','him','his','hit','hot','how','hub','hug',
-    'ice','ill','imp','ink','inn','ion','ire','ivy','jab','jam','jar','jaw',
-    'lay','led','leg','let','lid','lip','lit','log','lot','low','map','mat',
-    'max','may','mob','mod','mop','mud','mug','nap','net','new','nip','nod',
-    'nun','nut','oak','oar','odd','ode','oil','old','opt','orb','our','out',
-    'owl','own','pad','pan','pat','paw','pay','pea','peg','pen','pet','pie',
+    'ab','ac','ad','ae','af','ag','ah','ai','al','ak','am','an','ap','ar','as','at','aw','ax','ay','aq','au','av','az',
+    'be','bi','bl','br','by','ba','bb','bc','bd','be','bf','bg','bh','bm','bn','bp','bs','bt','bl','bo','bu','bv','bw','by','bz',
+    'ca','cb','cc','cd','ce','cf','ch','ci','ck','cl','cm','cn','co','cr','cs','ct','cu','cv','cw','cy','cz',
+    'da','db','dc','dd','de','df','dg','di','dj','dk','dl','dm','dn','do','dp','dr','ds','dt','du','dv','dw','dy','dz',
+    'ea','eb','ec','ed','ee','ef','eg','eh','ei','el','em','en','eo','ep','er','es','et','eu','ev','ew','ex','ey','ez',
+    'fa','fb','fc','fd','fe','ff','fg','fi','fj','fk','fl','fm','fn','fo','fp','fr','fs','ft','fu','fv','fw','fy','fz',
+    'ga','gb','gc','gd','ge','gf','gg','gi','gj','gk','gl','gm','gn','go','gp','gr','gs','gt','gu','gv','gw','gy','gz',
+    'ha','hb','hc','hd','he','hf','hg','hi','hj','hk','hl','hm','hn','ho','hp','hr','hs','ht','hu','hv','hw','hy','hz',
+    'ia','ib','ic','id','ie','if','ig','ih','ii','il','im','in','io','ip','ir','is','it','iu','iv','iw','ix','iy','iz',
+    'ja','jb','jc','jd','je','jf','jg','ji','jj','jk','jl','jm','jn','jo','jp','jr','js','jt','ju','jv','jw','jy','jz',
+    'ka','kb','kc','kd','ke','kf','kg','ki','kj','kk','kl','km','kn','ko','kp','kr','ks','kt','ku','kv','kw','ky','kz',
+    'la','lb','lc','ld','le','lf','lg','li','lj','lk','ll','lm','ln','lo','lp','lr','ls','lt','lu','lv','lw','ly','lz',
+    'ma','mb','mc','md','me','mf','mg','mi','mj','mk','ml','mm','mn','mo','mp','mr','ms','mt','mu','mv','mw','my','mz',
+    'na','nb','nc','nd','ne','nf','ng','ni','nj','nk','nl','nm','nn','no','np','nr','ns','nt','nu','nv','nw','ny','nz',
+    'oa','ob','oc','od','oe','of','og','oh','oi','oj','ok','ol','om','on','oo','op','or','os','ot','ou','ov','ow','ox','oy','oz',
+    'pa','pb','pc','pd','pe','pf','pg','pi','pj','pk','pl','pm','pn','po','pp','pr','ps','pt','pu','pv','pw','py','pz',
+    'qa','qb','qc','qd','qe','qf','qg','qi','qj','qk','ql','qm','qn','qo','qp','qr','qs','qt','qu','qv','qw','qy','qz',
+    'ra','rb','rc','rd','re','rf','rg','ri','rj','rk','rl','rm','rn','ro','rp','rr','rs','rt','ru','rv','rw','ry','rz',
+    'sa','sb','sc','sd','se','sf','sg','si','sj','sk','sl','sm','sn','so','sp','sq','sr','ss','st','su','sv','sw','sy','sz',
+    'ta','tb','tc','td','te','tf','tg','ti','tj','tk','tl','tm','tn','to','tp','tr','ts','tt','tu','tv','tw','ty','tz',
+    'ua','ub','uc','ud','ue','uf','ug','uh','ui','uj','uk','ul','um','un','uo','up','ur','us','ut','uv','uw','ux','uy','uz',
+    'va','vb','vc','vd','ve','vf','vg','vi','vj','vk','vl','vm','vn','vo','vp','vr','vs','vt','vu','vv','vw','vy','vz',
+    'wa','wb','wc','wd','we','wf','wg','wi','wj','wk','wl','wm','wn','wo','wp','wr','ws','wt','wu','wv','ww','wy','wz',
+    'xa','xb','xc','xd','xe','xf','xg','xi','xj','xk','xl','xm','xn','xo','xp','xr','xs','xt','xu','xv','xw','xy','xz',
+    'ya','yb','yc','yd','ye','yf','yg','yi','yj','yk','yl','ym','yn','yo','yp','yr','ys','yt','yu','yv','yw','yy','yz',
+    'za','zb','zc','zd','ze','zf','zg','zi','zj','zk','zl','zm','zn','zo','zp','zr','zs','zt','zu','zv','zw','zy','zz'
+
+    
   ],
   hard: [
-    'acht','acqu','aest','agni','aign','ailt','aint','aird','airm','aith',
-    'ckle','ckly','cque','ctly','ddle','dged','dger','dges','dght','dgle',
-    'ffly','ggle','ghly','ggle','gnly','gued','gues','ical','ical','ight',
-    'ique','isme','itch','ized','izer','izes','ject','jtle','kdge','kght',
-    'knit','know','ldom','ldly','ldst','lest','lfth','lgth','lkly','llth',
-    'phth','psyc','ptly','quel','queu','quip','quiz','rack','rdly','rful',
-    'rght','rrho','rthy','sque','stly','stle','tchy','tght','tion','tled',
-    'tlng','tmph','tnes','tney','tphs','tque','tsch','ttph','tual','twit',
-  ]
+    'ack','age','aid','aim','air','all','amp','and','ant','any','arc','are',
+    'cat','car','can','cap','cal',
+    'cer','cen','ces','cet','cel',
+    'chi','cho','cha','che','chu',
+    'cla','cle','cli','clo','clu',
+    'com','con','cor','col','cou',
+    'cra','cre','cri','cro','cru',
+    'dra','dre','dri','dro','due',
+    'ear','eat','ell','end','ent',
+    'era','ere','ers','est','eve',
+    'for','fro','fur','far','fit',
+    'da','db','dc','dd','de','df','dg','di','dj','dk','dl','dm','dn','do','dp','dr','ds','dt','du','dv','dw','dy','dz',
+    'ea','eb','ec','ed','ee','ef','eg','eh','ei','el','em','en','eo','ep','er','es','et','eu','ev','ew','ex','ey','ez',
+    'fa','fb','fc','fd','fe','ff','fg','fi','fj','fk','fl','fm','fn','fo','fp','fr','fs','ft','fu','fv','fw','fy','fz',
+    'ga','gb','gc','gd','ge','gf','gg','gi','gj','gk','gl','gm','gn','go','gp','gr','gs','gt','gu','gv','gw','gy','gz',
+    'ha','hb','hc','hd','he','hf','hg','hi','hj','hk','hl','hm','hn','ho','hp','hr','hs','ht','hu','hv','hw','hy','hz',
+    'ia','ib','ic','id','ie','if','ig','ih','ii','il','im','in','io','ip','ir','is','it','iu','iv','iw','ix','iy','iz',
+    'ja','jb','jc','jd','je','jf','jg','ji','jj','jk','jl','jm','jn','jo','jp','jr','js','jt','ju','jv','jw','jy','jz',
+    'ka','kb','kc','kd','ke','kf','kg','ki','kj','kk','kl','km','kn','ko','kp','kr','ks','kt','ku','kv','kw','ky','kz',
+    'la','lb','lc','ld','le','lf','lg','li','lj','lk','ll','lm','ln','lo','lp','lr','ls','lt','lu','lv','lw','ly','lz',
+    'ma','mb','mc','md','me','mf','mg','mi','mj','mk','ml','mm','mn','mo','mp','mr','ms','mt','mu','mv','mw','my','mz',
+    'na','nb','nc','nd','ne','nf','ng','ni','nj','nk','nl','nm','nn','no','np','nr','ns','nt','nu','nv','nw','ny','nz'
+  ],
+
 }
 
 // ─── Room helpers ─────────────────────────────────────────────────────────────
@@ -49,8 +76,8 @@ export function generateRoomCode() {
 }
 
 /** Pick a random prompt syllable based on difficulty */
-export function getRandomPrompt(difficulty = 'medium') {
-  const list = PROMPTS[difficulty] ?? PROMPTS.medium
+export function getRandomPrompt(difficulty = 'easy') {
+  const list = PROMPTS[difficulty] ?? PROMPTS.easy
   return list[Math.floor(Math.random() * list.length)]
 }
 
@@ -65,7 +92,7 @@ export async function createRoom(hostId, hostName, settings = {}) {
     status: 'waiting',       // waiting | playing | finished
     createdAt: serverTimestamp(),
     settings: {
-      difficulty:    settings.difficulty    ?? 'medium',
+      difficulty:    settings.difficulty    ?? 'easy',
       minTurnSecs:   settings.minTurnSecs   ?? 5,
       startingLives: settings.startingLives ?? 2,
       maxLives:      settings.maxLives      ?? 3,
