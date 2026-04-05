@@ -271,7 +271,7 @@ export default function GamePage() {
                 <p className="text-blast-text text-xs font-display font-bold mt-1 truncate">{p.name}</p>
                 <div className="flex justify-center gap-0.5 mt-1">
                   {Array.from({ length: Math.max(p.lives ?? 0, 0) }, (_, i) => (
-                    <span key={i} className="text-[10px]">'nice'</span>
+                    <span key={i} className="text-[10px]">❤️</span>
                   ))}
                 </div>
               </div>
